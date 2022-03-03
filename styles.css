@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
+
+body, html{
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  color: white;
+  font-family: 'Rubik', sans-serif;
+}
+input{
+  flex: 7;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border: 0;
+  outline: 0;
+  height: 40px;
+  padding-left: 10px;
+  font-family: 'Rubik', sans-serif;
+}
+button{
+  background-color: hsl(0, 0%, 17%);
+  height: 42px;
+  border: 0;
+  flex: 1;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  cursor: pointer;
+}
+h6{
+  color: hsl(0, 0%, 59%);
+  margin: 0;
+}
+h5{
+  color: hsl(0, 0%, 17%);
+  font-size: 20px;
+  margin-top: 15px;
+}
+.main{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+.ip-input{
+  flex: 1.2;
+  background-image: url("images/pattern-bg.png");
+}
+.map{
+  flex: 2;
+  z-index: 1;
+}
+.ip-input h1{
+  text-align: center;
+  font-weight: 500;
+}
+.input-div{
+  text-align: center;
+  width: 35%;
+  height: 40px;
+  margin: 0 auto;
+  display: flex;
+}
+.ip-details{
+  display: flex;
+  background-color: white;
+  width: 80%;
+  height: 150px;
+  position: absolute;
+  top: 170px;
+  left: 130px;
+  border-radius: 10px;
+  z-index: 1;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.ip-address, .location , .time-zone , .isp{
+  flex: 1;
+  padding: 20px 15px;
+  position: relative;
+
+}
+
+div.ip-address:before,div.location:before,div.time-zone:before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 30;
+  height: 100px;
+  width: 50%;
+  border-right: 1px solid rgba(100, 100, 111, 0.2);
+}
