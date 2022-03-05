@@ -91,14 +91,13 @@ div.ip-address:before,div.location:before,div.time-zone:before {
 }
 @media (max-width:720px) {
   .input-div{
-    width: 70%;
+    width: 80%;
     height: 50px;
   }
   .ip-details{
     width: 80%;
-    background-color: red;
   }
   h5{
-    font-size: ;
+    font-size: 17px;
   }
 }
