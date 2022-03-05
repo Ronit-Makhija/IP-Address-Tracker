@@ -89,3 +89,7 @@ div.ip-address:before,div.location:before,div.time-zone:before {
   width: 50%;
   border-right: 1px solid rgba(100, 100, 111, 0.2);
 }
+@media (max-width:720px) {
+
+
+}

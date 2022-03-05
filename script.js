@@ -1,12 +1,12 @@
-import {apiKey , accessToken} from '.config.js';
-
-var api_key = apiKey;
-var access_Token = accessToken;
+var api_key = 'at_SM7nf8Ww601CicFfwIsuIwIqzobxE';
 var latitude;
 var longitude;
 var map;
 var marker;
 var tilelayer;
+var bingLayer;
+const tileUrl = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
+
 
 function searchIpDetails(ip){
 
@@ -24,15 +24,8 @@ function searchIpDetails(ip){
            longitude = data.location.lng;
            map = L.map('map').setView([latitude, longitude], 13);
            marker = L.marker([latitude, longitude]).addTo(map);
-           tilelayer = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=' + access_Token, {
-               attribution: '',
-               maxZoom: 18,
-               id: 'mapbox/streets-v11',
-               tileSize: 512,
-               zoomOffset: -1,
-               accessToken: access_Token
-           });
-           tilelayer.addTo(map);
+           const tiles = L.tileLayer(tileUrl);
+           tiles.addTo(map);
        },
        error: function(){
          console.log("error");
@@ -44,23 +37,18 @@ function searchIpDetails(ip){
          document.getElementById("isp").innerText = "";
          map = L.map('map').setView([latitude, longitude], 13);
          marker = L.marker([latitude, longitude]).addTo(map);
-         tilelayer = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=' + accessToken, {
-             attribution: '',
-             maxZoom: 18,
-             id: 'mapbox/streets-v11',
-             tileSize: 512,
-             zoomOffset: -1,
-             accessToken: accessToken
-         });
-         tilelayer.addTo(map);
+         tiles = L.tileLayer(tileUrl);
+         tiles.addTo(map);
        }
    });
 });
 };
 
+
 function userIpDetails(){
 
   $.getJSON("https://api.ipify.org/?format=json" , function(data){
+    console.log(data);
     var userIp = data.ip;
     document.getElementById("ipInput").placeholder = userIp;
     searchIpDetails(userIp);
