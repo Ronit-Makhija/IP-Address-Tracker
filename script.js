@@ -1,6 +1,7 @@
-var api_key = config.ApiKey;
-var accessToken = config.AccessToken;
+import {apiKey , accessToken} from '.config.js';
 
+var api_key = apiKey;
+var access_Token = accessToken;
 var latitude;
 var longitude;
 var map;
@@ -23,17 +24,15 @@ function searchIpDetails(ip){
            longitude = data.location.lng;
            map = L.map('map').setView([latitude, longitude], 13);
            marker = L.marker([latitude, longitude]).addTo(map);
-           tilelayer = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=' + accessToken, {
+           tilelayer = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=' + access_Token, {
                attribution: '',
                maxZoom: 18,
                id: 'mapbox/streets-v11',
                tileSize: 512,
                zoomOffset: -1,
-               accessToken: accessToken
+               accessToken: access_Token
            });
            tilelayer.addTo(map);
-
-
        },
        error: function(){
          console.log("error");
@@ -43,6 +42,17 @@ function searchIpDetails(ip){
          document.getElementById("location").innerText = "";
          document.getElementById("time-zone").innerText = "";
          document.getElementById("isp").innerText = "";
+         map = L.map('map').setView([latitude, longitude], 13);
+         marker = L.marker([latitude, longitude]).addTo(map);
+         tilelayer = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=' + accessToken, {
+             attribution: '',
+             maxZoom: 18,
+             id: 'mapbox/streets-v11',
+             tileSize: 512,
+             zoomOffset: -1,
+             accessToken: accessToken
+         });
+         tilelayer.addTo(map);
        }
    });
 });
