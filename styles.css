@@ -96,6 +96,7 @@ div.ip-address:before,div.location:before,div.time-zone:before {
   }
   .ip-details{
     width: 80%;
+    background-color: red;
   }
   h5{
     font-size: ;
