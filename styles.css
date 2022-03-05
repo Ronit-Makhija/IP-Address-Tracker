@@ -32,7 +32,7 @@ h6{
 }
 h5{
   color: hsl(0, 0%, 17%);
-  font-size: 20px;
+  font-size: 1.4641288433382138vw;
   margin-top: 15px;
 }
 .main{
@@ -66,8 +66,8 @@ h5{
   width: 80%;
   height: 150px;
   position: absolute;
-  top: 170px;
-  left: 130px;
+  top: 25%;
+  left: 10%;
   border-radius: 10px;
   z-index: 1;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -90,6 +90,14 @@ div.ip-address:before,div.location:before,div.time-zone:before {
   border-right: 1px solid rgba(100, 100, 111, 0.2);
 }
 @media (max-width:720px) {
-
-
+  .input-div{
+    width: 70%;
+    height: 50px;
+  }
+  .ip-details{
+    width: 80%;
+  }
+  h5{
+    font-size: ;
+  }
 }
