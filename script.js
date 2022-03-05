@@ -15,7 +15,6 @@ function searchIpDetails(ip){
        url: "https://geo.ipify.org/api/v1",
        data: {apiKey: api_key, ipAddress: ip},
        success: function(data) {
-         console.log(data);
            document.getElementById("ip-address").innerText = data.ip;
            document.getElementById("location").innerText = data.location.city + ", " + data.location.region + ", " + data.location.country;
            document.getElementById("time-zone").innerText = data.location.timezone;
@@ -48,7 +47,6 @@ function searchIpDetails(ip){
 function userIpDetails(){
 
   $.getJSON("https://api.ipify.org/?format=json" , function(data){
-    console.log(data);
     var userIp = data.ip;
     document.getElementById("ipInput").placeholder = userIp;
     searchIpDetails(userIp);
